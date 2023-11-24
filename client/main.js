@@ -1,3 +1,3 @@
-// console.log(navigator.language);
-
-const a = 'wow';
+alert('hello world');
+prompt('이름>');
+confirm('really?');
