@@ -40,7 +40,15 @@ console.log(typeof bigNumber);
 const isActive = false;
 console.log(typeof isActive);
 // 7. 데이터 컬렉션(collection) 또는 복잡한 엔티티(entity)
+const object = new Object({ name: 'sirlin' });
+console.log(object);
+
+const obj = { name: 'lin' };
+console.log(obj);
 // 8. 고유한 식별자(unique identifier)
+
+const unique = Symbol('uuid');
+console.log(unique);
 
 /* typeof 연산자의 2가지 사용법 ---------------------------------------------- */
 
@@ -51,8 +59,36 @@ console.log(typeof isActive);
 
 // Object
 
+const user = {
+  name: 'tiger',
+  age: 25,
+  sayHi: function () {
+    return `hello ${this.name}`;
+  },
+  alert1: function () {
+    //normal function
+  },
+  alert2() {
+    //concise method
+  },
+  alert3: () => {
+    //arrow function
+  },
+};
+console.log(user);
+console.log(user.sayHi());
+
 // Array
+const newArray = new Array([1, 2, 3]);
+const arr = [10, 100, 1000, 1, 2, 3];
+console.log(arr);
+console.log(newArray);
 
 // function
+
+function 붕어빵틀(재료) {
+  console.log(`냠냠 ${재료}붕어빵`);
+}
+붕어빵틀('팥');
 
 // this
