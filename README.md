@@ -10,4 +10,4 @@
 
 ### Basic
 
-- [x] Code Structure [바로가기](https://www.naver.com)
+- [x] Code Structure [바로가기](https://github.com/lin0211/core-javascript/blob/01.core/client/chapter/core/01.structure.js)
