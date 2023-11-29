@@ -37,6 +37,8 @@ while (k < frontEndDev.length) {
   k++;
 }
 
+console.log('***');
+
 // while 문 (역순환 : 역방향)
 let j = frontEndDev.length - 1;
 while (j >= 0) {
