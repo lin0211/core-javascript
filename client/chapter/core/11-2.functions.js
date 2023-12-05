@@ -59,6 +59,9 @@ let calculateTotal = function (a, b, c, d, e, f, g) {
   //   total += a;
   // });
 
+  // map : 값을 반환, 배열만 반환
+  // filter : 값을 반환, 배열만 반환
+  // reduce: 값을 반환
   total = arr3.reduce((arr, cur) => arr + cur, 0);
 
   return total;
@@ -76,10 +79,118 @@ let anonymousFunctionExpression;
 let namedFunctionExpression;
 
 // 콜백 함수 (표현)식
-let callbackFunctionExpression;
+let callbackFunctionExpression = function (isActive, success, fail) {
+  if (isActive) {
+    success();
+  } else {
+    fail();
+  }
+};
+
+callbackFunctionExpression(
+  false,
+  () => {
+    console.log('성공!');
+  },
+  () => {
+    console.log('실패!');
+  }
+);
+
+// 함수 선언문 vs. 함수 (표현)식
+
+function movePage(url, success, fail) {
+  url.match(/http.www/) || typeof url === 'string' ? success() : fail();
+}
+
+movePage(
+  'https://www.naver.com',
+  () => {
+    console.log('해당페이지로 이동');
+  },
+  () => {
+    console.log('잘못된 url입니다');
+  }
+);
+
+// 즉시 실행 함수 (표현)식
+// Immediately Invoked Function Expression
+let IIFE;
+//  함수가 선언 됨과 동시에 실행되는 것을 말한다.
+// var를 가둬두기 위해 만들어짐. - var는 function 안에 가둠
+
+(function a() {})();
 
 // 함수 선언문 vs. 함수 (표현)식
 
 // 즉시 실행 함수 (표현)식
 // Immediately Invoked Function Expression
+
 let IIFE;
+
+// 함수가 선언 됨과 동시에 실행되는 것을 말합니다.
+
+// 📂
+// import css from 'css.js' // module
+
+// var는 블록 스코프 : x
+// var는 함수 스코프 : o
+
+// incapsulation (캡슐화)
+// 모듈화
+
+// const MASTER = (function (g){
+
+//   console.log( g.alert() );
+//   let uuid =  'askdjazxjd!@#!@$123';
+
+//   return {
+//     getKey(){
+//       return uuid
+//     },
+//     setKey(value){
+//       uuid = value
+//     }
+//   }
+
+// })(window);
+
+// // console.log(MASTER.getKey());
+
+// MASTER.setKey('새로운 비밀번호')
+
+const css = (function () {
+  function getStyle(node, prop) {
+    if (typeof node === 'string') node = document.querySelector(node);
+    if (typeof prop !== 'string')
+      throw new Error(
+        'getStyle 함수의 두 번째 인수는 string 타입 이어야 합니다.'
+      );
+
+    return getComputedStyle(node, null)[prop];
+  }
+
+  function setStyle(node, prop, value) {
+    if (typeof node === 'string') node = document.querySelector(node);
+    if (typeof prop !== 'string')
+      throw new Error(
+        'setStyle 함수의 두 번째 인수는 string 타입 이어야 합니다.'
+      );
+    if (!value)
+      throw new Error('setStyle 함수의 세 번째 인수는 필수값 입니다.');
+
+    node.style[prop] = value;
+  }
+
+  function css(node, prop, value) {
+    // if(!value){
+    //   return getStyle(node,prop) // getter
+    // }else{
+    //   setStyle(node,prop,value) // setter
+    // }
+
+    return !value ? getStyle(node, prop) : setStyle(node, prop, value);
+  }
+
+  return css;
+})();
