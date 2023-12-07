@@ -103,7 +103,7 @@ function createUser(name, age, phone = '010-0000-0000') {
   };
 }
 
-const user = createUser('tiger', '35');
+// const user = createUser('tiger', '35');
 
 // 프로퍼티 포함 여부 확인
 
@@ -164,6 +164,7 @@ const arr = [10, 100, 1000, 10000];
 // const a1 = arr[0]
 // const a2 = arr[1]
 
+// *********************
 const [a1, a2, a3, a4] = arr;
 
 for (let [key, value] of Object.entries(authUser)) {
@@ -192,7 +193,7 @@ const scores = {
 
 // const {} = salaries;
 // 순서는 상관 없다.
-// 변수의 이름을 변경가능
+// 변수의 이름을 변경가능 rename
 // const {Tom, Bob, Alex, Mary} = scores
 const { Tom: tom, Bob: bob, Alex: alex, Mary: mary } = scores;
 
