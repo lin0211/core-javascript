@@ -101,6 +101,12 @@ function Tiger(name) {
 const 한라산호랑이 = new Tiger('한라산');
 const 금강산호랑이 = new Tiger('금강산');
 
+한라산호랑이.hunt(); //instance method
+Tiger.bark = function () {
+  //static method
+  return '어흥';
+};
+
 ////////////////////////////////////////////////////////////////////////////
 function sum(a, b, c) {
   console.log(a, b, c); //1, 2, 3
