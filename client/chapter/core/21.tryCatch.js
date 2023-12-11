@@ -81,6 +81,9 @@ try {
   console.log('JSON ERROR :', error.message);
 }
 
+//자바스크립트는 늘 에러가 나는 환경인데 - 비동기 통신
+//에러를 잡아주기 위해 try catch문법을 사용
+
 // finally 절
 // 오류가 있던, 없던 상관없이 항상 실행
 // try ... catch를 빠져나가는 어떠한 경우에도 항상 실행
